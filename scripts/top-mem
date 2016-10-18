@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#For Conky (.conkyrc)
+#$1: "name" or else
+#$2: number
+
+if [[ "$2" == 1 ]]; then
+	res=`sudo ps_mem | tail -n 8 | head -n +5 | tac`
+	echo "$res" > .mem
+fi
+
+line=$(cat .mem | head -n "$2" | tail -n +"$2")
+stringarray=($line)
+name=${stringarray[8]}
+val=${stringarray[6]}
+suf=${stringarray[7]}
+
+if [[ "$1" == name ]]; then
+ echo "$name"
+
+else
+ echo "$val $suf"
+
+fi
+
+exit

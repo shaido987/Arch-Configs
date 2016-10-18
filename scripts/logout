@@ -1,0 +1,8 @@
+#!/bin/bash
+
+alsactl --file ~/scripts/asound.state store
+amixer sset Master mute
+i3lock --image ~/pictures/ruby-dark.png -n &
+wait
+alsactl --file ~/scripts/asound.state restore
+exit 0

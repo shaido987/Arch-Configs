@@ -1,0 +1,38 @@
+* Brightness & tansparancy
+	- urxvt transparency strange first time opening
+
+
+* Menybar
+	- More widgets?
+	- Dropbox icon strange sometimes  - restarting awesome fixes
+
+* Right-click menu
+	- Freedesktop?
+
+* Conky
+	- CPU together? chrome...
+	- Shortcommand to raise it?
+	- Add temp
+	- Fix CPU to look better - add core 0 temp to the outside 
+		+ text over the graph
+	- Cpu circle strange sometimes
+
+-------------------  High priority  -------------------
+
+* Minimized clients should change name or something
+
+* Opening files will make xdg-open take all memory - possibly fixe (added BROWSER= in bashrc)
+* Choose file prompt in chrome crashes it
+
+* Modkey + L (lock) should not unmute
+
+* need to run pacman -Syy before updating, why? 
+
+-------------------   Programming   -------------------
+
+* Haskell ideas
+	- Sudoku
+	- Blackjack
+	- Fem i rad
+	- 4 i rad (vertikal)
+	- Sten, sax, påse

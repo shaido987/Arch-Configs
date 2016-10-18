@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xautolock -detectsleep -notify 300 -notifier screenlock -time 10 -locker "systemctl suspend" -corners ----
