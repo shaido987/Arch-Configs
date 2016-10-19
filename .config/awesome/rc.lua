@@ -316,6 +316,8 @@ root.buttons(awful.util.table.join(
 globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey, "Control" }, "Right",  awful.tag.viewnext       ),
+    awful.key({ modkey, "Control" }, "l",  awful.tag.viewnext       ),
+    awful.key({ modkey, "Control" }, "h",  awful.tag.viewprev       ),
     awful.key({ modkey, "Control" }, "Escape", awful.tag.history.restore),
     
     awful.key({ modkey, "Shift", "Control" }, "Left",
@@ -348,6 +350,35 @@ globalkeys = awful.util.table.join(
            end
        end),
 
+    awful.key({ modkey, "Shift", "Control" }, "h",
+       function (c)
+           local curidx = awful.tag.getidx()
+           local screen = mouse.screen
+           if curidx == 1 then
+               awful.client.movetotag(tags[client.focus.screen][5])
+               local tag = awful.tag.gettags(screen)[5]
+               awful.tag.viewonly(tag)
+           else
+               awful.client.movetotag(tags[client.focus.screen][curidx - 1])
+               local tag = awful.tag.gettags(screen)[curidx - 1]
+               awful.tag.viewonly(tag)
+           end
+       end),
+
+    awful.key({ modkey, "Shift", "Control" }, "l",
+       function (c)
+           local curidx = awful.tag.getidx()
+           local screen = mouse.screen
+           if curidx == 5 then
+               awful.client.movetotag(tags[client.focus.screen][1])
+               local tag = awful.tag.gettags(screen)[1]
+               awful.tag.viewonly(tag)
+           else
+               awful.client.movetotag(tags[client.focus.screen][curidx + 1])
+               local tag = awful.tag.gettags(screen)[curidx + 1]
+               awful.tag.viewonly(tag)
+           end
+       end),
 
     awful.key({ altkey }, "Tab",
 	    function ()

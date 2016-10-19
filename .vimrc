@@ -6,8 +6,11 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " PLUGINS
-" Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-sensible'
+" Plugin 'tpope/vim-unimpaired'
+Plugin 'dag/vim2hs'
+Plugin 'Solarized'
+
 Plugin 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -19,22 +22,30 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-Plugin 'dag/vim2hs'
 Plugin 'pbrisbin/vim-syntax-shakespeare'
 let g:hamlet_highlight_trailing_space = 0
 
-Plugin 'Solarized'
+Plugin 'scrooloose/nerdtree'
+autocmd vimEnter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd VimEnter * wincmd p
 
 " VUNDLE CLEANUP    
 call vundle#end()
 filetype plugin indent on
 
 " ========== GENERAL VIM SETTINGS ==========
-" Enable search highlighting
+set title
+
+" Search options
+set ignorecase
+set smartcase
 set hlsearch
+
 " Enable line numbers
 set relativenumber
 set number
+
 " Use F11 to toggle between paste and nopaste
 set pastetoggle=
 
@@ -45,8 +56,8 @@ set softtabstop=2
 set shiftwidth=2
 set shiftround
 
+" Misc
 set cmdheight=2
-
 set guifont=Monospace\ 10
 
 syntax enable
