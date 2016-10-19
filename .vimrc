@@ -10,6 +10,8 @@ Plugin 'tpope/vim-sensible'
 " Plugin 'tpope/vim-unimpaired'
 Plugin 'dag/vim2hs'
 Plugin 'Solarized'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'tpope/vim-fugitive'
 
 Plugin 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list = 1
@@ -26,11 +28,21 @@ Plugin 'pbrisbin/vim-syntax-shakespeare'
 let g:hamlet_highlight_trailing_space = 0
 
 Plugin 'scrooloose/nerdtree'
-autocmd vimEnter * NERDTree
+" Open NERDTree with vim
+" autocmd vimEnter * NERDTree
+" autocmd VimEnter * wincmd p
+" Close NERDTree with vim
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-autocmd VimEnter * wincmd p
+nmap <silent> <F3> :call NERDTreeToggleInCurDir()<cr>
+function! NERDTreeToggleInCurDir()
+" If NERDTree is open in the current buffer
+  if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+    exe ":NERDTreeClose"
+  else
+    exe ":NERDTreeFind"
+  endif
+endfunction
 
-" VUNDLE CLEANUP    
 call vundle#end()
 filetype plugin indent on
 
@@ -38,13 +50,15 @@ filetype plugin indent on
 set title
 
 " Search options
-set ignorecase
-set smartcase
-set hlsearch
+set ignorecase smartcase hlsearch
 
 " Enable line numbers
 set relativenumber
 set number
+
+" Remove sounds
+set noerrorbells
+set novisualbell
 
 " Use F11 to toggle between paste and nopaste
 set pastetoggle=
