@@ -20,6 +20,7 @@ alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
 alias dup='urxvt &'
+alias eclimd='/home/shaido/.eclipse/org.eclipse.platform_4.6.1_155965261_linux_gtk_x86_64/eclimd'
 # export QT_SELECT=4
 
 BROWSER=/usr/bin/chrome

@@ -18,6 +18,12 @@ xset s noblank
 xset s off
 xset -dpms
 
+# Fonts
+xset +fp /usr/share/fonts/misc
+xset +fp /usr/share/fonts/local
+xset +fp /usr/share/fonts/ttf
+xset fp rehash
+
 #DEFAULT_SESSION=xfce4-session
 DEFAULT_SESSION=awesome
 case $1 in

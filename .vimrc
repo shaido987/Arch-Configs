@@ -12,6 +12,16 @@ Plugin 'dag/vim2hs'
 Plugin 'Solarized'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'tpope/vim-fugitive'
+Plugin 'derekwyatt/vim-scala'
+
+Plugin 'scrooloose/nerdcommenter'
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+
+Plugin 'Valloric/YouCompleteMe'
+let g:EclimCompletionMethod = "omnifunc"
 
 Plugin 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list = 1
@@ -69,6 +79,9 @@ set expandtab
 set softtabstop=2
 set shiftwidth=2
 set shiftround
+
+" Custom commands & alias
+let mapleader = ','
 
 " Misc
 set cmdheight=2
