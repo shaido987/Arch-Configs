@@ -220,7 +220,7 @@ state.PCH {
 	control.18 {
 		iface MIXER
 		name 'Master Playback Volume'
-		value 87
+		value 79
 		comment {
 			access 'read write'
 			type INTEGER
@@ -228,7 +228,7 @@ state.PCH {
 			range '0 - 87'
 			dbmin -6525
 			dbmax 0
-			dbvalue.0 0
+			dbvalue.0 -600
 		}
 	}
 	control.19 {
@@ -321,8 +321,8 @@ state.PCH {
 	control.27 {
 		iface PCM
 		name 'Playback Channel Map'
-		value.0 0
-		value.1 0
+		value.0 3
+		value.1 4
 		comment {
 			access read
 			type INTEGER
@@ -438,8 +438,8 @@ state.PCH {
 	control.37 {
 		iface MIXER
 		name 'PCM Playback Volume'
-		value.0 255
-		value.1 255
+		value.0 254
+		value.1 254
 		comment {
 			access 'read write user'
 			type INTEGER
@@ -448,8 +448,8 @@ state.PCH {
 			tlv '0000000100000008ffffec1400000014'
 			dbmin -5100
 			dbmax 0
-			dbvalue.0 0
-			dbvalue.1 0
+			dbvalue.0 -20
+			dbvalue.1 -20
 		}
 	}
 	control.38 {
