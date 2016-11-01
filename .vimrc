@@ -5,6 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
+
 " PLUGINS
 Plugin 'tpope/vim-sensible'
 " Plugin 'tpope/vim-unimpaired'
@@ -19,14 +20,16 @@ let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
+let g:NERDDefaultAlign = 'left'
 
 Plugin 'Valloric/YouCompleteMe'
 let g:EclimCompletionMethod = "omnifunc"
+let g:ycm_show_diagnostics_ui = 0
 
 Plugin 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_haskell_checkers = ['ghc_mod', 'hlint']
 set shell=/bin/sh
@@ -82,6 +85,7 @@ set shiftround
 
 " Custom commands & alias
 let mapleader = ','
+cmap w!! w !sudo tee > /dev/null %
 
 " Misc
 set cmdheight=2
