@@ -25,6 +25,9 @@ alias eclimd='/home/shaido/.eclipse/org.eclipse.platform_4.6.1_155965261_linux_g
 
 BROWSER=/usr/bin/chrome
 
+# Disable ctrl+s freeze 
+stty -ixon
+
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
 

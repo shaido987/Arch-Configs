@@ -900,7 +900,7 @@ end
     run_once("~/scripts/xflux -l 22.15 -g 114.1")     -- Flux (Hong Kong)
     run_once("xcompmgr")                            -- Transparancy for conky
     run_once("conky")                               -- Desktop HUD
-    run_once("xbacklight -set 28")                  -- Minimum brightness at startup
+    run_once("xbacklight -set 18")                  -- Minimum brightness at startup
     run_once("skype")                               -- Skype
     run_once("nm-applet")                           -- Network icon
 -- }}}
