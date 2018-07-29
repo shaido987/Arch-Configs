@@ -1,0 +1,13 @@
+#!/bin/bash
+
+iptables -t mangle -A OUTPUT -m owner --uid-owner bittorrent -j MARK --set-mark 3
+iptables -t nat -A POSTROUTING -o $1 -j SNAT --to-source $4
+
+ip rule add fwmark 3 lookup 200
+ip route add 192.168.0.0/24 dev eth0 table 200
+ip route add default via $4 dev $1 table 200
+
+/etc/openvpn/update-resolv-conf $1 $2 $3 $4 $5
+
+su - bittorrent -c deluged &
+su - bittorrent -c deluge-web &
