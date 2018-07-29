@@ -1,0 +1,12 @@
+#!/bin/bash
+
+iptables -t mangle -D OUTPUT -m owner --uid-owner bittorrent -j MARK --set-mark 3
+iptables -t nat -D POSTROUTING -o $1 -j SNAT --to-source $4
+
+ip rule delete fwmark 3
+ip route flush table 200
+
+/etc/openvpn/update-resolv-conf $1 $2 $3 $4 $5
+
+pkill deluged
+pkill deluge-web
